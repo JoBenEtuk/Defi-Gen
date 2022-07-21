@@ -1,0 +1,53 @@
+// App level styles
+html {
+    font-size: Max(0.75rem, calc(100vw / 1440 * 16));
+    // font-size: clamp(0.75rem, 1vh, calc(100vw / 1440 * 16));
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    // overflow-x: hidden;
+    max-width: 100vw;
+    // scroll-behavior: smooth;
+    color: $col-white;
+    background: $col-purple-l1;
+}
+
+* {
+    outline: none;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    margin-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    list-style-type: none;
+    padding-inline-start: 0;
+    // cursor: none;
+    &::placeholder {
+        opacity: 1;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a,
+button,
+[role='button'],
+[role='presentation'] {
+    cursor: pointer;
+    border: none;
+    outline: none;
+}

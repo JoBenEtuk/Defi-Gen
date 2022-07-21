@@ -1,0 +1,26 @@
+%grid-content {
+    display: grid;
+    place-content: center;
+}
+
+%grid-items {
+    display: grid;
+    place-items: center;
+}
+
+%flex-ac {
+    display: flex;
+    align-items: center;
+}
+
+%flex-ac-jb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+%flex-ac-jc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
