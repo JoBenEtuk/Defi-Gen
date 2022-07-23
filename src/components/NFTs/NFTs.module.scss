@@ -20,6 +20,7 @@
         }
         &__main {
             display: flex;
+            justify-content: space-between;
             gap: 3rem;
             &__list {
                 width: Min(100%, 30rem);
