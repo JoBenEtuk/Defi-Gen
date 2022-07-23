@@ -1,0 +1,38 @@
+    @import '../../styles/_mixins.scss';
+    @import '../../styles/_variables.scss';
+    @import '../../styles/_utils.scss';
+    .preloader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 10;
+        section {
+            background: $col-purple-l2;
+            width: 100vw;
+            height: 50vh;
+        }
+        div {
+            background: $col-purple-l1;
+            z-index: 12;
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 100%;
+            position: absolute;
+            left: 50vw;
+            top: 50vh;
+            &::after {
+                content: '';
+                position: absolute;
+                border-radius: 100%;
+                left: 0;
+                top: 1rem;
+                width: 0.75rem;
+                height: 0.75rem;
+                background: $col-purple-l1;
+                opacity: 0.4;
+                filter: blur(5px);
+            }
+        }
+    }

@@ -1,0 +1,48 @@
+@import '../../styles/_mixins.scss';
+@import '../../styles/_variables.scss';
+@import '../../styles/_utils.scss';
+.nav {
+    @extend %flex-ac-jb;
+    gap: 2rem;
+    padding-top: 1rem;
+    &>span {
+        font-weight: 700;
+        font-size: 1.25rem;
+    }
+    a {
+        font-weight: 500;
+        font-size: 1rem;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        &::after {
+            transition: all 0.3s ease-in-out;
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: $col-white;
+        }
+        &:hover {
+            font-weight: 700;
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+    ul,
+    div {
+        @extend %flex-ac;
+        gap: 2rem;
+    }
+    button {
+        color: $col-white;
+        padding: 1rem 1.875rem;
+        background: $col-purple-l2;
+        transition: border-radius 0.5s ease-in-out;
+        &:hover {
+            border-radius: 3rem;
+        }
+    }
+}

@@ -1,6 +1,11 @@
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
+import Header from './Layout/Header'
+import Cursor from './Layout/Cursor'
+import Preloader from './Layout/Preloader'
 import useLocoScroll from './hooks/useLocoScroll'
+import Hero from './components/Hero'
+import 'splitting/dist/splitting.css'
 
 function App() {
 	const scrollRef = useRef<any>()
@@ -8,6 +13,10 @@ function App() {
 
 	return (
 		<main id='main-container' ref={scrollRef}>
+			{/* <Preloader /> */}
+			<Header />
+			<Cursor />
+			<Hero />
 			<section>
 				<div>
 					<a href='https://vitejs.dev' target='_blank'>

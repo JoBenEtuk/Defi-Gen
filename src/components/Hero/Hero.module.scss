@@ -1,0 +1,192 @@
+    @import '../../styles/_mixins.scss';
+    @import '../../styles/_variables.scss';
+    @import '../../styles/_utils.scss';
+    .hero {
+        display: flex;
+        gap: 4%;
+        padding-top: Max(2rem, 8vh);
+        min-height: calc(100vh - 65px);
+        // height: 982px;
+        position: relative;
+        &__left {
+            width: 48%;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                width: 20rem;
+                height: 34rem;
+                right: 2rem;
+                bottom: 3rem;
+                background: #5b4b8a66;
+            }
+            &__img {
+                width: 33rem;
+                position: relative;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+                div {
+                    position: absolute;
+                    width: 15rem;
+                    right: 0.75rem;
+                    bottom: -1.75rem;
+                    &>span {
+                        display: flex;
+                        justify-content: flex-end;
+                        margin-bottom: 0.5rem;
+                        background: $col-purple-l1;
+                        font-weight: 500;
+                        font-size: 1.5rem;
+                        padding: 1rem;
+                    }
+                    svg {
+                        width: 100%;
+                    }
+                }
+            }
+            small {
+                white-space: nowrap;
+                font-weight: 500;
+                font-size: 1rem;
+                position: absolute;
+                right: 8rem;
+                bottom: 3.5rem;
+            }
+        }
+        &__right {
+            width: 48%;
+            display: flex;
+            justify-content: space-between;
+            padding-top: 3rem;
+            &__text {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding-bottom: 3rem;
+                &__top {
+                    h1 {
+                        font-size: 4rem;
+                        font-weight: 500;
+                        p {
+                            span {
+                                color: $col-purple-l2;
+                            }
+                        }
+                    }
+                    &>p {
+                        font-weight: 300;
+                        width: Min(100%, 21rem);
+                        margin-top: 1rem;
+                    }
+                }
+                &__bottom {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.5rem;
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
+                        span {
+                            font-weight: 700;
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+            &__links {
+                li {
+                    margin-bottom: 2.5rem;
+                    a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        gap: 0.75rem;
+                        &:hover {
+                            &>span {
+                                transform: translateX(0);
+                                opacity: 1;
+                            }
+                            svg {
+                                animation: scale 250ms 2 linear;
+                            }
+                        }
+                        &>span {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.75rem;
+                            opacity: 0;
+                            transform: translateX(2rem);
+                            overflow: hidden;
+                            transition: all 0.3s ease-in-out;
+                            span {
+                                background: $col-white;
+                                display: block;
+                                height: 1px;
+                                width: 3.5rem;
+                            }
+                        }
+                        svg {
+                            width: 3.125rem;
+                            height: 3.125rem;
+                        }
+                    }
+                }
+            }
+        }
+        aside {
+            bottom: 0;
+            right: min(-16px, -2vw);
+            position: absolute;
+            width: 16rem;
+            height: 20rem;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                background: rgba(55, 27, 88, 0.4);
+            }
+            img {
+                width: 100%;
+            }
+            p {
+                @extend %flex-ac;
+                gap: 1rem;
+                position: absolute;
+                bottom: 1rem;
+                left: 1rem;
+                z-index: 1;
+                &:hover {
+                    svg {
+                        transform: translateX(0.75rem)
+                    }
+                }
+                svg {
+                    transform: translateX(0);
+                    transition: all 0.3s ease-in-out;
+                }
+                span {
+                    display: block;
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    
+    @keyframes scale {
+        0% {
+            transform: scale(1.1);
+        }
+        50% {
+            transform: scale(0.9);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
