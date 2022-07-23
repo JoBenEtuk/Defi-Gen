@@ -12,6 +12,7 @@
             background: $col-purple-l2;
             width: 100vw;
             height: 50vh;
+            position: relative;
         }
         div {
             background: $col-purple-l1;
@@ -21,13 +22,13 @@
             border-radius: 100%;
             position: absolute;
             left: 50vw;
-            top: 50vh;
+            top: 46vh;
             &::after {
                 content: '';
-                position: absolute;
+                position: fixed;
                 border-radius: 100%;
-                left: 0;
-                top: 1rem;
+                left: 50vw;
+                top: 50vh;
                 width: 0.75rem;
                 height: 0.75rem;
                 background: $col-purple-l1;

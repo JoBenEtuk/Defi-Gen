@@ -19,7 +19,7 @@ function App() {
 	return (
 		<>
 			<Cursor />
-			{/* <Preloader /> */}
+			<Preloader />
 			<main id='main-container' ref={scrollRef}>
 				<Header />
 				<Hero />
