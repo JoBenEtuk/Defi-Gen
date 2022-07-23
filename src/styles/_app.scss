@@ -54,3 +54,28 @@ button,
     border: none;
     outline: none;
 }
+
+hr {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.slick-slide {
+    padding: Max(15px, 1.5vw);
+}
+
+.slick-dots {
+    bottom: -6rem;
+    li {
+        width: 1.25rem;
+        height: 1.25rem;
+        background: #D9D9D9;
+        &.slick-active {
+            background: $col-purple-l2;
+        }
+        button {
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
