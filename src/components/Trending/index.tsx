@@ -12,12 +12,14 @@ const Trending = () => {
 		dots: true,
 		centerMode: true,
 		infinite: true,
-		speed: 500,
-		slidesToShow: 4,
+		speed: 1000,
+		slidesToShow: 3.25,
 		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 2000,
 		responsive: [
 			{
-				breakpoint: 1440,
+				breakpoint: 1280,
 				settings: {
 					slidesToShow: 3,
 					infinite: true,

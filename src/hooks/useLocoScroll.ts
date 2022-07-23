@@ -14,7 +14,7 @@ export default function useLocoScroll(start: any) {
 		const scrollEl = document.querySelector('#main-container')
 
 		locoScroll = new LocomotiveScroll({
-			el: scrollEl,
+			el: start.current,
 			smooth: true,
 			multiplier: 0.75,
 		})

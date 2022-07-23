@@ -1,0 +1,83 @@
+    @import '../../styles/_mixins.scss';
+    @import '../../styles/_variables.scss';
+    @import '../../styles/_utils.scss';
+    .categories {
+        min-height: 900px;
+        header {
+            @extend %flex-ac-jb;
+            gap: 2rem;
+            padding-top: 2.5rem;
+            h2 {
+                font-weight: 700;
+                font-size: 2rem;
+            }
+            h3 {
+                font-size: 1.3rem;
+                -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
+                color: transparent;
+            }
+        }
+        &__header {
+            @extend %flex-ac;
+            gap: 2rem;
+            padding-left: 10vw;
+            margin-bottom: 2rem;
+            span {
+                font-weight: 700;
+                font-size: 1.25rem;
+                color: #808080;
+                &.active {
+                    color: $col-white;
+                }
+            }
+        }
+        &__carousel {
+            &__item {
+                transition: transform 0.3s ease-in-out;
+                &:hover {
+                    transform: scale(1.1, 1.2);
+                    footer {
+                        opacity: 0;
+                    }
+                    &>div {
+                        div {
+                            opacity: 1;
+                        }
+                    }
+                }
+                img {
+                    width: 100%;
+                }
+                &>div {
+                    position: relative;
+                    div {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        background: rgba(55, 27, 88, 0.5);
+                        @extend %flex-ac-jc;
+                        flex-direction: column;
+                        transition: opacity 0.3s ease-in-out;
+                        opacity: 0;
+                        h2 {
+                            font-weight: 700;
+                            font-size: 2rem;
+                        }
+                        h3 {
+                            font-weight: 700;
+                            font-size: 1.25rem;
+                        }
+                    }
+                }
+                footer {
+                    transition: opacity 0.3s ease-in-out;
+                    opacity: 1;
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                    margin-top: 2rem;
+                }
+            }
+        }
+    }

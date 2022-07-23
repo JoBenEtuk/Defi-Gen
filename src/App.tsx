@@ -9,21 +9,29 @@ import Trending from './components/Trending'
 import 'splitting/dist/splitting.css'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import NFTs from './components/NFTs'
+import Categories from './components/Categories'
 
 function App() {
 	const scrollRef = useRef<any>()
 	useLocoScroll(scrollRef)
 
 	return (
-		<main id='main-container' ref={scrollRef}>
-			{/* <Preloader /> */}
-			<Header />
+		<>
 			<Cursor />
-			<Hero />
-			<hr />
-			<Trending />
-			<hr />
-		</main>
+			{/* <Preloader /> */}
+			<main id='main-container' ref={scrollRef}>
+				<Header />
+				<Hero />
+				<hr />
+				<Trending />
+				<hr />
+				<NFTs />
+				<hr />
+				<Categories />
+				<hr />
+			</main>
+		</>
 	)
 }
 

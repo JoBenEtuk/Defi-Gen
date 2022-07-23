@@ -1,0 +1,97 @@
+    @import '../../styles/_mixins.scss';
+    @import '../../styles/_variables.scss';
+    @import '../../styles/_utils.scss';
+    .nfts {
+        min-height: 900px;
+        header {
+            @extend %flex-ac-jb;
+            gap: 2rem;
+            padding-top: 2.5rem;
+            margin-bottom: 2rem;
+            h2 {
+                font-weight: 700;
+                font-size: 2rem;
+            }
+            h3 {
+                font-size: 1.3rem;
+                -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
+                color: transparent;
+            }
+        }
+        &__main {
+            display: flex;
+            gap: 3rem;
+            &__list {
+                width: Min(100%, 30rem);
+                ul {
+                    margin-bottom: 8rem;
+                    li {
+                        display: flex;
+                        gap: 1rem;
+                        margin-bottom: 1rem;
+                        span {
+                            font-weight: 700;
+                            font-size: 6rem;
+                            background: linear-gradient(180deg, $col-purple-l2 0%, rgba(255, 255, 255, 0.5) 99.99%, rgba(153, 74, 255, 0) 100%);
+                            color: transparent;
+                            -webkit-background-clip: text;
+                            -webkit-text-stroke: 4px transparent;
+                            color: $col-purple-l1;
+                        }
+                        p {
+                            font-weight: 400;
+                            font-size: 1rem;
+                        }
+                    }
+                }
+                a {
+                    font-weight: 700;
+                    font-size: 1.125rem;
+                    &:before {
+                        content: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Crect width='20' height='20' fill='url(%23pattern0)'/%3E%3Cdefs%3E%3Cpattern id='pattern0' patternContentUnits='objectBoundingBox' width='1' height='1'%3E%3Cuse xlink:href='%23image0_84_20' transform='scale(0.0111111)'/%3E%3C/pattern%3E%3Cimage id='image0_84_20' width='90' height='90' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAABmJLR0QA/wD/AP+gvaeTAAABQUlEQVR4nO3cO07DUAAF0SQFAYl1g0STgoqKPVAgloREx0ep0FCQCvGxwB6TaM4GfDXFs4snLxZJkiRJkiT5FeAEuAKegQfgAljPvevg7CJ/dFvsEQFL4OmT0MUeG/D4RehijwnYfBO62GMB1ruYxZ4acATc/BD7Djiee+veK7ao2KJii4otKrao2KJii4otKrao2KJii4otKrao2KJii4otKrao2KJii4otKrao2KJii+iSjmdg7PO5dx6EAcfIvblnZT7sn3mde8DeG3h0nM29c6/1MhQMOJehz7u/KbKgyIIiC4osKLKgyIIiC4osKLKgyIIiC4osKLKgyIIiC4osKLKgyIIiC4osKLKgyIIiC+hyiwO4LPLEgBXwUuSJ7UJviywArossAE53sbe8/+J4U+QJAcu5NyRJkiRJkoP0BrMWDcguaF+kAAAAAElFTkSuQmCC'/%3E%3C/defs%3E%3C/svg%3E%0A");
+                        font: inherit;
+                        vertical-align: -0.2rem;
+                        display: inline-block;
+                        transform: scaleY(0) translateX(-1em);
+                    }
+                    &:before,
+                     :global(.char) {
+                        transition: transform 0.8s cubic-bezier(.75, 0, .24, .98);
+                        transition-delay: calc( 0.015s * var(--char-index));
+                    }
+                     :global(.char) {
+                        transform: translateX(-0.15em);
+                    }
+                    &:hover:before {
+                        transform: scaleY(1) translateX(0em);
+                    }
+                    &:hover :global(.char) {
+                        transform: translateX(1em);
+                        transform: translateX(0.5em) translateX( calc(0.1em * var(--char-index)));
+                    }
+                }
+            }
+            &__imgs {
+                width: Min(100%, 54rem);
+                height: 46rem;
+                background: #513B75;
+                overflow: hidden;
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+                &>div {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    padding: 0 2rem;
+                    place-items: center;
+                    column-gap: 1rem;
+                    img {
+                        width: 100%;
+                        margin-bottom: 1.5rem;
+                    }
+                }
+            }
+        }
+    }

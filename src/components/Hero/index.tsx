@@ -117,7 +117,7 @@ const Hero: React.FC = () => {
 				</div>
 
 				<div className={cls.hero__right}>
-					<div data-scroll data-scroll-speed='1.5' className={cls.hero__right__text}>
+					<div data-scroll data-scroll-speed='1.3' className={cls.hero__right__text}>
 						<div className={cls.hero__right__text__top}>
 							<h1 data-splitting='chars'>
 								Discover
