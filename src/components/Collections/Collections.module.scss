@@ -1,0 +1,83 @@
+    @import '../../styles/_mixins.scss';
+    @import '../../styles/_variables.scss';
+    @import '../../styles/_utils.scss';
+    .collections {
+        header {
+            @extend %flex-ac-jb;
+            gap: 2rem;
+            padding-top: 2.5rem;
+            margin-bottom: 7rem;
+            h2 {
+                font-weight: 700;
+                font-size: 2rem;
+            }
+            h3 {
+                font-size: 1.3rem;
+                -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
+                color: transparent;
+            }
+        }
+        &__main {
+            padding: 0 5vw;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 3rem;
+            row-gap: 3rem;
+            &__item {
+                @extend %flex-ac-jb;
+                &__left {
+                    @extend %flex-ac;
+                    gap: 1rem;
+                    img {
+                        width: 3.125rem;
+                        height: 3.125rem;
+                    }
+                    div {
+                        p {
+                            font-weight: 700;
+                            font-size: 1rem;
+                            margin-bottom: 0.75rem;
+                        }
+                        small {
+                            font-size: 1rem;
+                            color: rgba(217, 217, 217, 0.7);
+                        }
+                    }
+                }
+                &__right {
+                    span {
+                        font-weight: 500;
+                        font-size: 1rem;
+                        color: #28C938;
+                        margin-bottom: 0.75rem;
+                        display: inline-block;
+                    }
+                    p {
+                        font-weight: 500;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+        &__btn {
+            text-align: center;
+            margin: 5rem 0;
+            button {
+                width: 12rem;
+                height: 3.5rem;
+                background: $col-purple-l2;
+                transition: border-radius 0.5s ease-in-out;
+                &:hover {
+                    border-radius: 3rem;
+                }
+            }
+        }
+        &__footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            background: #371B58;
+            background: $col-purple-l1;
+        }
+    }

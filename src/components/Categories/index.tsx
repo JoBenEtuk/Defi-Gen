@@ -1,4 +1,3 @@
-import React from 'react'
 import cls from './Categories.module.scss'
 import img from '../../assets/categories.png'
 

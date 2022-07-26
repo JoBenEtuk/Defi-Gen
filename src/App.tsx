@@ -11,6 +11,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import NFTs from './components/NFTs'
 import Categories from './components/Categories'
+import Collections from './components/Collections'
 
 function App() {
 	const scrollRef = useRef<any>()
@@ -30,6 +31,7 @@ function App() {
 				<hr />
 				<Categories />
 				<hr />
+				<Collections />
 			</main>
 		</>
 	)
