@@ -7,6 +7,7 @@
             @extend %flex-ac-jb;
             gap: 2rem;
             padding-top: 2.5rem;
+            margin-bottom: 3rem;
             h2 {
                 font-weight: 700;
                 font-size: 2rem;
@@ -17,66 +18,76 @@
                 color: transparent;
             }
         }
-        &__header {
-            @extend %flex-ac;
-            gap: 2rem;
-            padding-left: 10vw;
-            margin-bottom: 2rem;
-            span {
-                font-weight: 700;
-                font-size: 1.25rem;
-                color: #808080;
-                &.active {
-                    color: $col-white;
+        &__main {
+            @include flex(space-between, center);
+            padding: 0 5vw;
+            &__left {
+                div {
+                    position: relative;
+                    width: 29rem;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        right: -2rem;
+                        bottom: -2rem;
+                        background: rgba(153, 74, 255, 0.2);
+                        width: 22rem;
+                        height: 43rem;
+                        z-index: 2;
+                    }
+                    img {
+                        width: 100%;
+                        position: relative;
+                        z-index: 3;
+                    }
+                }
+                p {
+                    font-size: 6rem;
+                    opacity: 0.3;
+                    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
+                    color: transparent;
+                    z-index: 1;
+                    position: relative;
+                    left: 4vw;
+                    bottom: 3rem;
                 }
             }
-        }
-        &__carousel {
-            &__item {
-                transition: transform 0.3s ease-in-out;
-                &:hover {
-                    transform: scale(1.1, 1.2);
-                    footer {
-                        opacity: 0;
-                    }
-                    &>div {
-                        div {
-                            opacity: 1;
+            &__right {
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 3rem;
+                    li {
+                        font-weight: 700;
+                        &:nth-child(1) {
+                            font-size: 4rem;
                         }
-                    }
-                }
-                img {
-                    width: 100%;
-                }
-                &>div {
-                    position: relative;
-                    div {
-                        position: absolute;
-                        top: 0;
-                        bottom: 0;
-                        left: 0;
-                        right: 0;
-                        background: rgba(55, 27, 88, 0.5);
-                        @extend %flex-ac-jc;
-                        flex-direction: column;
-                        transition: opacity 0.3s ease-in-out;
-                        opacity: 0;
-                        h2 {
-                            font-weight: 700;
+                        &:nth-child(2) {
+                            font-size: 3rem;
+                            color: #D9D9D9;
+                        }
+                        &:nth-child(3) {
+                            font-size: 2.5rem;
+                            color: rgba(217, 217, 217, 0.7);
+                        }
+                        &:nth-child(4) {
+                            font-size: 2.5rem;
+                            color: rgba(217, 217, 217, 0.6);
+                        }
+                        &:nth-child(5) {
                             font-size: 2rem;
+                            color: rgba(217, 217, 217, 0.5);
                         }
-                        h3 {
-                            font-weight: 700;
-                            font-size: 1.25rem;
+                        &:nth-child(6) {
+                            font-size: 1.875rem;
+                            color: rgba(217, 217, 217, 0.4);
+                        }
+                        &:nth-child(7) {
+                            font-size: 2rem;
+                            color: rgba(217, 217, 217, 0.3);
                         }
                     }
-                }
-                footer {
-                    transition: opacity 0.3s ease-in-out;
-                    opacity: 1;
-                    font-weight: 700;
-                    font-size: 1.5rem;
-                    margin-top: 2rem;
                 }
             }
         }
