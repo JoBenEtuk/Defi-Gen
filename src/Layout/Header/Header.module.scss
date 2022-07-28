@@ -5,14 +5,17 @@
     @extend %flex-ac-jb;
     gap: 2rem;
     padding-top: 1rem;
+    overflow: hidden;
     &>span {
         font-weight: 700;
         font-size: 1.25rem;
+        opacity: 0;
+        transform: translateX(2rem);
     }
     a {
         font-weight: 500;
         font-size: 1rem;
-        transition: all 0.3s ease-in-out;
+        transition: font-weight 0.3s ease-in-out;
         position: relative;
         &::after {
             transition: all 0.3s ease-in-out;
@@ -35,6 +38,17 @@
     div {
         @extend %flex-ac;
         gap: 2rem;
+        li {
+            opacity: 0;
+            transform: translateX(2rem);
+        }
+    }
+    div {
+        a,
+        button {
+            opacity: 0;
+            transform: translateX(2rem);
+        }
     }
     button {
         color: $col-white;

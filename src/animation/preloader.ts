@@ -1,4 +1,5 @@
 import gsap from 'gsap'
+import { header } from './header'
 
 export const preloader = () => {
 	gsap
@@ -42,4 +43,5 @@ export const preloader = () => {
 		.to('[data-animation="preloader"]', {
 			display: 'none',
 		})
+		.call(() => header())
 }

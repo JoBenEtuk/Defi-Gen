@@ -4,7 +4,7 @@ import cls from './Header.module.scss'
 const Header: React.FC = () => {
 	return (
 		<div className='container'>
-			<nav className={cls.nav}>
+			<nav className={cls.nav} data-animation='header'>
 				<span>DefiGen.</span>
 				<ul>
 					<li>

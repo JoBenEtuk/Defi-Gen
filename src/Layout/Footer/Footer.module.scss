@@ -64,6 +64,13 @@
             @extend %flex-ac;
             gap: 1rem;
             margin-top: 1.5rem;
+            a {
+                &:hover {
+                    img {
+                        animation: rotate 200ms 2 linear;
+                    }
+                }
+            }
         }
         &__input {
             width: 100%;
@@ -103,5 +110,17 @@
                 margin-bottom: 1.5rem;
             }
         }
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-10deg) scale(1.1);
+    }
+    50% {
+        transform: rotate(10deg) scale(0.9);
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
     }
 }
