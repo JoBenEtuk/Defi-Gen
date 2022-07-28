@@ -1,0 +1,107 @@
+@import '../../styles/_mixins.scss';
+@import '../../styles/_variables.scss';
+@import '../../styles/_utils.scss';
+.footer {
+    padding: 5rem 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 8rem;
+    min-height: 100vh;
+    h3 {
+        font-weight: 700;
+        font-size: 2rem;
+    }
+    &__division {
+        width: 1px;
+        background: $col-white;
+        height: 17rem;
+        position: relative;
+        top: calc(50vh - 12rem);
+    }
+    &__left {
+        width: 49%;
+        &__top {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 8rem;
+            dl {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                dt {
+                    font-weight: 700;
+                    font-size: 1.25rem;
+                }
+                dd {
+                    font-weight: 500;
+                    font-size: 1rem;
+                }
+            }
+        }
+        &__bottom {
+            display: flex;
+            align-items: flex-end;
+            gap: 1rem;
+            span {
+                display: inline-block;
+                width: 1px;
+                background: $col-white;
+                height: 6.25rem;
+            }
+            div {
+                width: 22rem;
+                p {
+                    margin-top: 1rem;
+                    font-weight: 300;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    &__right {
+        width: 49%;
+        &__socials {
+            @extend %flex-ac;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        &__input {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            margin-bottom: 5rem;
+            input {
+                text-indent: 1rem;
+                background: #D9D9D9;
+                font-weight: 700;
+                font-size: 1.5rem;
+                color: $col-black;
+                outline: none;
+                border: none;
+                &::placeholder {
+                    opacity: 0.4;
+                }
+            }
+            button {
+                background: $col-purple-l2;
+                height: 84px;
+                font-weight: 500;
+                font-size: 1.5rem;
+            }
+        }
+        p {
+            font-weight: 500;
+            font-size: 1rem;
+            margin-top: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        ul {
+            margin-top: 8rem;
+            li {
+                font-weight: 700;
+                font-size: 1.25rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+}
