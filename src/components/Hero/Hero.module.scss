@@ -11,6 +11,8 @@
         &__left {
             width: 48%;
             position: relative;
+            // left: -50vw;
+            opacity: 0;
             &::before {
                 content: '';
                 position: absolute;
@@ -67,24 +69,34 @@
                 padding-bottom: 3rem;
                 &__top {
                     h1 {
-                        font-size: 4rem;
-                        font-weight: 500;
-                        p {
-                            span {
+                        // p {
+                        &>span {
+                            font-size: 4rem;
+                            font-weight: 500;
+                            opacity: 0;
+                            transform: translateX(2rem);
+                            &:nth-child(3) {
                                 color: $col-purple-l2;
                             }
                         }
+                        // }
                     }
                     &>p {
                         font-weight: 300;
                         width: Min(100%, 21rem);
                         margin-top: 1rem;
+                        span {
+                            opacity: 0;
+                            transform: translateY(12px);
+                        }
                     }
                 }
                 &__bottom {
                     display: flex;
                     align-items: center;
                     gap: 1.5rem;
+                    opacity: 0;
+                    transform: translateY(2rem);
                     div {
                         display: flex;
                         flex-direction: column;
@@ -99,6 +111,8 @@
             &__links {
                 li {
                     margin-bottom: 2.5rem;
+                    opacity: 0;
+                    transform: translateX(2rem);
                     a {
                         display: flex;
                         align-items: center;
@@ -142,6 +156,7 @@
             position: absolute;
             width: 16rem;
             height: 20rem;
+            opacity: 0;
             &::after {
                 content: "";
                 position: absolute;

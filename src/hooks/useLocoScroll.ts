@@ -6,22 +6,20 @@ import 'locomotive-scroll/src/locomotive-scroll.scss'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function useLocoScroll(start: any) {
+export default function useLocoScroll() {
 	useEffect(() => {
-		if (!start) return
 		let locoScroll: any = null
 
-		const scrollEl = document.querySelector('#main-container')
+		const scrollEl: any = document.querySelector('#main-container')
 
 		locoScroll = new LocomotiveScroll({
-			el: start.current,
+			el: scrollEl,
 			smooth: true,
-			multiplier: 0.75,
+			lerp: 0.075,
+			multiplier: 0.9,
 		})
 
-		locoScroll.on('scroll', () => {
-			ScrollTrigger.update()
-		})
+		locoScroll.on('scroll', ScrollTrigger.update)
 
 		ScrollTrigger.scrollerProxy(scrollEl, {
 			scrollTop(value) {
@@ -32,14 +30,16 @@ export default function useLocoScroll(start: any) {
 				}
 				return null
 			},
-			scrollLeft(value) {
-				if (locoScroll) {
-					return arguments.length
-						? locoScroll.scrollTo(value, 0, 0)
-						: locoScroll.scroll.instance.scroll.x
+			getBoundingClientRect() {
+				return {
+					top: 0,
+					left: 0,
+					width: window.innerWidth,
+					height: window.innerHeight,
 				}
-				return null
 			},
+
+			pinType: scrollEl.style.transform ? 'transform' : 'fixed',
 		})
 
 		const lsUpdate = () => {
@@ -59,35 +59,5 @@ export default function useLocoScroll(start: any) {
 				console.log('Kill', locoScroll)
 			}
 		}
-	}, [start])
+	})
 }
-
-// export const locoScroll = new LocomotiveScroll({
-// 	el: document.querySelector('#main-container'),
-// 	smooth: true,
-
-// 	tablet: { smooth: true },
-
-// 	smartphone: { smooth: true },
-// })
-// locoScroll.on('scroll', ScrollTrigger.update)
-
-// ScrollTrigger.scrollerProxy('#main-container', {
-// 	scrollTop(value) {
-// 		return arguments.length
-// 			? locoScroll.scrollTo(value, 0, 0)
-// 			: locoScroll.scroll.instance.scroll.y
-// 	},
-// 	getBoundingClientRect() {
-// 		return {
-// 			top: 0,
-// 			left: 0,
-// 			width: window.innerWidth,
-// 			height: window.innerHeight,
-// 		}
-// 	},
-// })
-
-// ScrollTrigger.addEventListener('refresh', () => locoScroll.update())
-
-// ScrollTrigger.refresh()

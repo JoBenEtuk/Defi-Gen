@@ -1,4 +1,5 @@
 import gsap from 'gsap'
+import { hero } from './hero'
 export const header = () => {
 	gsap
 		.timeline()
@@ -23,4 +24,5 @@ export const header = () => {
 			x: 0,
 			ease: 'none',
 		})
+		.call(() => hero(), [], 0.5)
 }

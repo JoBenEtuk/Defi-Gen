@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Splitting from 'splitting'
 import cls from './Trending.module.scss'
 import Slider from 'react-slick'
 
 import img1 from '../../assets/carousel1.png'
 import img2 from '../../assets/carousel2.png'
 import img3 from '../../assets/carousel3.png'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 
-const Trending = () => {
+const Trending: React.FC = () => {
+	gsap.registerPlugin(ScrollTrigger)
+	useEffect(() => {
+		Splitting()
+	}, [])
+
 	const settings = {
 		arrows: false,
 		dots: true,
@@ -81,12 +89,31 @@ const Trending = () => {
 			img: img3,
 		},
 	]
+
+	useEffect(() => {
+		setTimeout(() => {
+			gsap.to('[data-animation="trending"] header h2 span', {
+				opacity: 1,
+				y: 0,
+				stagger: 0.05,
+				scrollTrigger: {
+					trigger: '[data-animation="trending"]',
+					start: 'top bottom',
+					scroller: '#main-container',
+					toggleActions: 'restart none none reverse',
+					// markers: true,
+				},
+			})
+		})
+		ScrollTrigger.refresh()
+	}, [])
+
 	return (
 		<div className='container'>
-			<section className={cls.trending}>
+			<section className={cls.trending} data-animation='trending'>
 				<header>
 					<span></span>
-					<h2>Trending this week</h2>
+					<h2 data-splitting='chars'>Trending this week</h2>
 					<h3>DefiGen.</h3>
 				</header>
 				<div className={cls.trending__header}>

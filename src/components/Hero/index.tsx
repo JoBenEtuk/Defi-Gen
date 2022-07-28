@@ -81,7 +81,7 @@ const Hero: React.FC = () => {
 	]
 	return (
 		<div className='container'>
-			<section className={cls.hero}>
+			<section className={cls.hero} data-animation='hero'>
 				<div className={cls.hero__left}>
 					<div className={cls.hero__left__img}>
 						<img src={img} alt='' width='540' height='655' />
@@ -119,13 +119,20 @@ const Hero: React.FC = () => {
 				<div className={cls.hero__right}>
 					<div data-scroll data-scroll-speed='1.3' className={cls.hero__right__text}>
 						<div className={cls.hero__right__text__top}>
-							<h1 data-splitting='chars'>
+							<h1 data-splitting='words'>
 								Discover
-								<br /> <p>unique</p>collection of
-								<br /> Arts and <br />
+								<br />
+								unique
+								<br />
+								collection of
+								<br />
+								Arts and
+								<br />
 								NFTS.
 							</h1>
-							<p>Digital marketplace for crypto collectibles and non-fungible tokens</p>
+							<p data-splitting='chars'>
+								Digital marketplace for crypto collectibles and non-fungible tokens
+							</p>
 						</div>
 						<div className={cls.hero__right__text__bottom}>
 							<div data-splitting='chars'>20k+ Artists</div>

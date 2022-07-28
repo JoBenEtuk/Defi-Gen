@@ -16,7 +16,7 @@ import Footer from './Layout/Footer'
 
 function App() {
 	const scrollRef = useRef<any>()
-	useLocoScroll(scrollRef)
+	useLocoScroll()
 
 	return (
 		<>
