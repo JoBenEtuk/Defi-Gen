@@ -92,18 +92,29 @@ const Trending: React.FC = () => {
 
 	useEffect(() => {
 		setTimeout(() => {
-			gsap.to('[data-animation="trending"] header h2 span', {
-				opacity: 1,
-				y: 0,
-				stagger: 0.05,
-				scrollTrigger: {
-					trigger: '[data-animation="trending"]',
-					start: 'top bottom',
-					scroller: '#main-container',
-					toggleActions: 'restart none none reverse',
-					// markers: true,
-				},
-			})
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: '[data-animation="trending"]',
+						start: 'top bottom',
+						scroller: '#main-container',
+						toggleActions: 'restart none none reverse',
+					},
+				})
+				.to('[data-animation="trending"] header h2 span', {
+					opacity: 1,
+					y: 0,
+					stagger: 0.05,
+				})
+				.to(
+					'[data-animation="trending"] header h3 span',
+					{
+						opacity: 1,
+						x: 0,
+						stagger: 0.1,
+					},
+					0
+				)
 		})
 		ScrollTrigger.refresh()
 	}, [])
@@ -114,7 +125,7 @@ const Trending: React.FC = () => {
 				<header>
 					<span></span>
 					<h2 data-splitting='chars'>Trending this week</h2>
-					<h3>DefiGen.</h3>
+					<h3 data-splitting='chars'>DefiGen.</h3>
 				</header>
 				<div className={cls.trending__header}>
 					<span className={cls.active}>Top Arts</span>

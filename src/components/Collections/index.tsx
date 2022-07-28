@@ -12,11 +12,12 @@ import img9 from '../../assets/Black and White Collection 14.png'
 import img10 from '../../assets/Black and White Collection 3.png'
 import img11 from '../../assets/Black and White Collection 9.png'
 
-import gsap, { ScrollTrigger } from 'gsap/src/all'
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
+import gsap from 'gsap'
+import Splitting from 'splitting'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 
 const Collections = () => {
-	// gsap.registerPlugin(ScrollTrigger)
 	const _arr: {
 		img: any
 		title: string
@@ -131,33 +132,77 @@ const Collections = () => {
 		},
 	]
 
-	const collection = useRef(null)
-	// useEffect(() => {
-	// 	gsap.from(collection.current, {
-	// 		scrollTrigger: {
-	// 			trigger: collection.current,
-	// 			markers: true,
-	// 			// scroller: '#main-container',
-	// 			// scrub: true,
-	// 			start: 'top bottom',
-	// 		},
-	// 		opacity: 0,
-	// 		ease: 'none',
-	// 	})
-	// }, [])
+	useEffect(() => {
+		Splitting()
+		setTimeout(() => {
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: '[data-animation="collection"]',
+						start: 'top bottom',
+						scroller: '#main-container',
+						toggleActions: 'restart none none reverse',
+					},
+				})
+				.to('[data-animation="collection"] header h2 span', {
+					opacity: 1,
+					y: 0,
+					stagger: 0.05,
+				})
+				.to(
+					'[data-animation="collection"] header h3 span',
+					{
+						opacity: 1,
+						x: 0,
+						stagger: 0.15,
+					},
+					0
+				)
+
+			gsap.to('[data-animation="collection__imgs"] img', {
+				scale: 1,
+				stagger: 0.2,
+				duration: 0.5,
+				ease: 'power3.out',
+				scrollTrigger: {
+					trigger: '[data-animation="collection__imgs"]',
+					start: 'top bottom',
+					scroller: '#main-container',
+					toggleActions: 'restart none none reverse',
+				},
+			})
+
+			gsap.to('[data-animation="collection__item"]', {
+				y: 0,
+				opacity: 1,
+				stagger: 0.1,
+				duration: 0.5,
+				ease: 'power3.out',
+				scrollTrigger: {
+					trigger: '[data-animation="collection__item"]',
+					start: 'top bottom',
+					scroller: '#main-container',
+				},
+			})
+		})
+		ScrollTrigger.refresh()
+	}, [])
 
 	return (
-		<section ref={collection}>
+		<section>
 			<div className='container'>
-				<section className={cls.collections}>
+				<section className={cls.collections} data-animation='collection'>
 					<header>
-						<h3>DefiGen.</h3>
-						<h2>Top Collections</h2>
+						<h3 data-splitting='chars'>DefiGen.</h3>
+						<h2 data-splitting='chars'>Top Collections</h2>
 						<span></span>
 					</header>
 					<div className={cls.collections__main}>
 						{_arr.map((item, index) => (
-							<div key={index} className={cls.collections__main__item}>
+							<div
+								data-animation='collection__item'
+								key={index}
+								className={cls.collections__main__item}>
 								<div className={cls.collections__main__item__left}>
 									<img src={item.img} width='50' height='50' alt='' />
 									<div>
@@ -178,7 +223,7 @@ const Collections = () => {
 				</section>
 			</div>
 
-			<footer className={cls.collections__footer}>
+			<footer data-animation='collection__imgs' className={cls.collections__footer}>
 				<img src={img6} width='130' height='130' alt='' />
 				<img src={img7} width='130' height='130' alt='' />
 				<img src={img8} width='130' height='130' alt='' />

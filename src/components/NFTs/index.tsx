@@ -7,6 +7,8 @@ import img2 from '../../assets/unsplash2.png'
 import img3 from '../../assets/unsplash3.png'
 import img4 from '../../assets/unsplash4.png'
 import img5 from '../../assets/unsplash5.png'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 
 const NFTs = () => {
 	const _list = [
@@ -17,14 +19,40 @@ const NFTs = () => {
 
 	useEffect(() => {
 		Splitting()
+		setTimeout(() => {
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: '[data-animation="nft"]',
+						start: 'top bottom',
+						scroller: '#main-container',
+						toggleActions: 'restart none none reverse',
+					},
+				})
+				.to('[data-animation="nft"] header h2 span', {
+					opacity: 1,
+					y: 0,
+					stagger: 0.05,
+				})
+				.to(
+					'[data-animation="nft"] header h3 span',
+					{
+						opacity: 1,
+						x: 0,
+						stagger: 0.15,
+					},
+					0
+				)
+		})
+		ScrollTrigger.refresh()
 	}, [])
 
 	return (
 		<div className='container'>
-			<section className={cls.nfts}>
+			<section className={cls.nfts} data-animation='nft'>
 				<header>
-					<h3>DefiGen.</h3>
-					<h2>How NFTs works</h2>
+					<h3 data-splitting='chars'>DefiGen.</h3>
+					<h2 data-splitting='chars'>How NFTs works</h2>
 					<span></span>
 				</header>
 

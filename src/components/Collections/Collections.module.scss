@@ -10,11 +10,19 @@
             h2 {
                 font-weight: 700;
                 font-size: 2rem;
+                span {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
             }
             h3 {
                 font-size: 1.3rem;
-                -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
-                color: transparent;
+                span {
+                    opacity: 0;
+                    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
+                    color: transparent;
+                    transform: translateX(25px);
+                }
             }
         }
         &__main {
@@ -25,6 +33,8 @@
             row-gap: 3rem;
             &__item {
                 @extend %flex-ac-jb;
+                opacity: 0;
+                transform: translateY(1rem);
                 &__left {
                     @extend %flex-ac;
                     gap: 1rem;
@@ -79,5 +89,8 @@
             width: 100%;
             background: #371B58;
             background: $col-purple-l1;
+            img {
+                transform: scale(0);
+            }
         }
     }

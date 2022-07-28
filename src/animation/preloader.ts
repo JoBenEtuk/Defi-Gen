@@ -6,7 +6,7 @@ export const preloader = () => {
 		.timeline()
 		.to('[data-animation="preloader"] div', {
 			top: '50vh',
-			// repeat: 8,
+			repeat: 8,
 			yoyo: true,
 			ease: 'none',
 			height: '0.5rem',

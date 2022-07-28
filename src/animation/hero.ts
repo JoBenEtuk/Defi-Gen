@@ -5,14 +5,14 @@ export const hero = () => {
 		.timeline()
 		.to('[data-animation="hero"] div:nth-child(1)', {
 			opacity: 1,
-			duration: 0.5,
+			duration: 0.75,
 		})
 		.to(
 			'[data-animation="hero"] aside',
 			{
 				opacity: 1,
 				x: 0,
-				duration: 0.5,
+				duration: 0.75,
 			},
 			0
 		)

@@ -11,11 +11,21 @@
             h2 {
                 font-weight: 700;
                 font-size: 2rem;
+                span {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
             }
             h3 {
                 font-size: 1.3rem;
                 -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
                 color: transparent;
+                span {
+                    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
+                    color: transparent;
+                    opacity: 0;
+                    transform: translateX(25px);
+                }
             }
         }
         &__main {

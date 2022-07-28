@@ -17,8 +17,12 @@
             }
             h3 {
                 font-size: 1.3rem;
-                -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
-                color: transparent;
+                span {
+                    opacity: 0;
+                    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
+                    color: transparent;
+                    transform: translateX(25px);
+                }
             }
         }
         &__header {
